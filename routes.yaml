@@ -23,7 +23,7 @@ product:
       url: /best # /product/:id/comments/best
       component: product/comments-best.component#ProductCommentsBestComponent
 # Or
-  .@comments: # @ is a short notation of dynamic: true
+  @dynamic .comments: # @dynamic is a directive, equals to `dynamic: true`
     .: /comments => product/comments.component#ProductCommentsComponent
     .all: / => product/comments.component#ProductCommentsAllComponent
     .best: /best => product/comments-best.component#ProductCommentsBestComponent
