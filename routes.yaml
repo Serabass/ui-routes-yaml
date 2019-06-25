@@ -26,4 +26,4 @@ product:
   .@comments: # @ is a short notation of dynamic: true
     .: /comments => product/comments.component#ProductCommentsComponent
     .all: / => product/comments.component#ProductCommentsAllComponent
-    .best: / => product/comments-nest.component#ProductCommentsBestComponent
+    .best: /best => product/comments-best.component#ProductCommentsBestComponent
