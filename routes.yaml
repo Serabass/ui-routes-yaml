@@ -1,4 +1,4 @@
-@componentsRoot: src/pages
+$componentsRoot: src/pages
 
 home:
   url: /home
