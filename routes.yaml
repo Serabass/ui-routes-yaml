@@ -1,4 +1,4 @@
-$componentsRoot: src/pages
+$componentsRoot: src/pages # Root system variable
 
 home:
   url: /home
@@ -23,14 +23,8 @@ product:
       url: /best # /product/:id/comments/best
       component: product/comments-best.component # if component exported as default (why not?)
     .filter @somethingAwesome: # @somethingAwesome is a directive
-      url: /filter?page&author&from&to&query
+      url: /filter?{page:int}&author&{from:date}&{to:date}&query
       component: product/comments/filter-comments.component
-      params:
-        page: int
-        author: string
-        from: date
-        to: date
-        query: string
 # Or
   .comments @dynamic: # @dynamic is a directive, equals to `dynamic: true`
     .: /comments => product/comments.component#ProductCommentsComponent
