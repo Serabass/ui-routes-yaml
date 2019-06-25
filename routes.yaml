@@ -1,22 +1,29 @@
+@componentsRoot: src/pages
+
 home:
   url: /home
-  component: src/home.component#HomeComponent
+  component: home.component#HomeComponent
 products:
   url: /products
-  component: src/pages/products.component#ProductsComponent
+  component: products.component#ProductsComponent
 product:
   url: /product/:id
-  component: src/pages/product.component#ProductComponent
+  component: product.component#ProductComponent
   .about:
     url: /about # /product/:id/about
-    component: src/pages/product/about.component#ProductAboutComponent
+    component: product/about.component#ProductAboutComponent
   .comments:
     url: /comments # /product/:id/comments
     dynamic: true
-    component: src/pages/product/comments.component#ProductCommentsComponent
+    component: product/comments.component#ProductCommentsComponent
     .all:
       url: / 
-      component: src/pages/product/comments.component#ProductCommentsAllComponent
+      component: product/comments-all.component#ProductCommentsAllComponent
     .best:
       url: /best # /product/:id/comments/best
-      component: src/pages/product/comments.component#ProductCommentsBestComponent
+      component: product/comments-best.component#ProductCommentsBestComponent
+# Or
+  .@comments: # @ is a short notation of dynamic: true
+    .: /comments => product/comments.component#ProductCommentsComponent
+    .all: / => product/comments.component#ProductCommentsAllComponent
+    .best: / => product/comments-nest.component#ProductCommentsBestComponent
