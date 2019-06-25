@@ -1,15 +1,22 @@
 home:
   url: /home
-  component: ./src/home.component#HomeComponent
+  component: src/home.component#HomeComponent
 products:
   url: /products
-  component: ./src/pages/products.component#ProductsComponent
+  component: src/pages/products.component#ProductsComponent
 product:
   url: /product/:id
-  component: ./src/pages/product.component#ProductComponent
+  component: src/pages/product.component#ProductComponent
   .about:
-    @url: /about
-    @component: ./src/pages/product/about.component#ProductAboutComponent
+    url: /about # /product/:id/about
+    component: src/pages/product/about.component#ProductAboutComponent
   .comments:
-    @url: /comments
-    @component: ./src/pages/product/comments.component#ProductCommentsComponent
+    url: /comments # /product/:id/comments
+    dynamic: true
+    component: src/pages/product/comments.component#ProductCommentsComponent
+    .all:
+      url: / 
+      component: src/pages/product/comments.component#ProductCommentsAllComponent
+    .best:
+      url: /best # /product/:id/comments/best
+      component: src/pages/product/comments.component#ProductCommentsBestComponent
