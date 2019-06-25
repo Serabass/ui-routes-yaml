@@ -21,8 +21,8 @@ product:
       component: product/comments-all.component#ProductCommentsAllComponent
     .best:
       url: /best # /product/:id/comments/best
-      component: product/comments-best.component # if component exported as deafult (why not?)
-    .filter:
+      component: product/comments-best.component # if component exported as default (why not?)
+    .filter @somethingAwesome: # @somethingAwesome is a directive
       url: /filter?page&author&from&to&query
       component: product/comments/filter-comments.component
       params:
@@ -32,7 +32,7 @@ product:
         to: date
         query: string
 # Or
-  @dynamic .comments: # @dynamic is a directive, equals to `dynamic: true`
+  .comments @dynamic: # @dynamic is a directive, equals to `dynamic: true`
     .: /comments => product/comments.component#ProductCommentsComponent
     .all: / => product/comments.component#ProductCommentsAllComponent
     .best: /best => product/comments-best.component#ProductCommentsBestComponent
