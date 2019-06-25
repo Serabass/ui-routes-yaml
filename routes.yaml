@@ -1,1 +1,15 @@
-123
+home:
+  url: /home
+  component: ./src/home.component#HomeComponent
+products:
+  url: /products
+  component: ./src/pages/products.component#ProductsComponent
+product:
+  url: /product/:id
+  component: ./src/pages/product.component#ProductComponent
+  .about:
+    @url: /about
+    @component: ./src/pages/product/about.component#ProductAboutComponent
+  .comments:
+    @url: /comments
+    @component: ./src/pages/product/comments.component#ProductCommentsComponent
